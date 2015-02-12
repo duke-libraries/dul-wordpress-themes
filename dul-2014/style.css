@@ -1,0 +1,332 @@
+/*
+Theme Name: DUL 2014 Theme
+Description: child theme of twenty fourteen theme
+Author: Michael Daul - Digital Projects Department
+Template: twentyfourteen
+*/
+@import url("../twentyfourteen/style.css");
+
+
+
+/* +++ */
+
+
+/* replacing green */
+a {
+	color: #225E9B;
+}
+
+.entry-content p,
+.entry-content li {
+	font-family: Libre Baskerville, serif;
+}
+
+.entry-content a, .entry-summary a, .page-content a, .comment-content a {
+text-decoration: none;
+}
+
+.entry-content a:hover, .entry-summary a:hover, .page-content a:hover, .comment-content a:hover, .entry-header a:hover {
+text-decoration: underline;
+color: #225E9B;
+}
+
+.entry-meta .tag-links a:hover:before {
+	border-right-color: #225E9B;
+}
+.entry-meta .tag-links a:hover {
+background-color: #225E9B;
+}
+
+.post-navigation a:hover,
+.image-navigation a:hover,
+.comment-metadata a:hover {
+	color: #225E9B;
+}
+
+.paging-navigation .page-numbers.current {
+border-top: 5px solid #999;
+color: #777;
+}
+
+.paging-navigation a:hover {
+border-top: 5px solid #999;
+color: #777;
+}
+
+.site-info a:hover {
+color: #eee;
+}
+
+.site-footer .textwidget ul li a {
+color: #eee;
+}
+
+.site-footer .textwidget ul li a:hover {
+text-decoration: underline;
+}
+
+
+
+
+/* +++ */
+
+.site {
+margin: 0 auto;
+}
+
+.primary-sidebar {
+padding-top: 1.5em;
+}
+
+#primary-sidebar a {
+	color: #ddd;
+}
+
+#primary-sidebar a:hover {
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px dotted #fff;
+}
+
+.sticky {
+position:fixed; top:0;
+}
+
+#site-header {
+border-bottom: 1px solid #0A1F4E;
+}
+
+.site-header {
+background-color: #333;
+}
+
+#library_logo {
+width: 19.8412%;
+max-width: 250px;
+text-align: center;
+display: block;
+float: left;
+position: absolute;
+z-index: 4;
+margin: 0;
+padding: 0;
+top: 0;
+}
+
+#library_logo img {
+	width: 100%;
+	max-width: 250px;
+}
+
+.paging-navigation {
+border-top: 5px solid #333;
+}
+
+.site-footer {
+background-color: #444;
+}
+
+#secondary {
+background-color: #444;
+border-top: none;
+}
+
+::selection {
+	background: #333;
+	color: #fff;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: #333;
+	color: #fff;
+	text-shadow: none;
+}
+
+.socialMediaIconsBig a {
+margin-right: 3px;
+}
+
+.site-footer .textwidget ul li {
+padding-bottom: .5em;
+}
+
+.s2_form_widget input {
+	color: #fff !important;
+}
+	
+.s2_form_widget #s2email {
+	color: #444 !important;
+}
+
+
+.entry-title {
+	text-transform: none;
+	font-size: 40px;
+	font-weight: 400;
+}
+
+.cat-links a {
+	color: #999;
+}
+
+.site-description {
+	display: none;
+}
+
+.st-tag-cloud a {
+	color: #eee !important;
+}
+
+#wpstats {
+	display: none;
+}
+
+#content ol li {
+	padding-bottom: 1em;
+}
+
+
+
+/* Nav */
+
+.primary-navigation {
+float: left;
+font-size: 11px;
+width: 100%;
+background: #fff;
+margin: 0;
+padding: 0;
+text-transform: normal;
+}
+
+.site-navigation a {
+	text-transform: normal;
+	color: #666;
+}
+
+
+.primary-navigation li:hover > a, 
+.primary-navigation li.focus > a {
+background-color: #ddd;
+color: #333;
+}
+
+
+.primary-navigation ul ul {
+background-color: #eee;
+}
+
+.primary-navigation ul li:hover > a, 
+.primary-navigation ul li.focus > a {
+	background-color: #ddd;
+}
+
+.site-navigation .current_page_item > a, 
+.site-navigation .current_page_ancestor > a, 
+.site-navigation .current-menu-item > a, 
+.site-navigation .current-menu-ancestor > a {
+	color: #225E9B;
+}
+
+
+
+@media screen and (min-width: 1008px) {
+
+.site:before {
+background-color: #fff;
+border-left: 1px solid rgba(0, 0, 0, 0.1);
+float: right;
+left: auto;
+right: 0;
+width: 250px;
+}
+
+#secondary {
+float: right;
+width: 190px;
+}
+
+.site-content, .site-main .widecolumn {
+margin-left: 0;
+margin-right: 250px !important;
+}
+
+.site-content .entry-header, .site-content .entry-content, .site-content .entry-summary, .site-content .entry-meta, .page-content {
+max-width: 620px;
+}
+
+.full-width .site-content blockquote.alignleft, .full-width .site-content img.size-full.alignleft, .full-width .site-content img.size-large.alignleft, .full-width .site-content img.size-medium.alignleft, .full-width .site-content .wp-caption.alignleft {
+margin-left: -25px;
+width: 25%;
+}
+
+.full-width .site-content blockquote.alignright, .full-width .site-content img.size-full.alignright, .full-width .site-content img.size-large.alignright, .full-width .site-content img.size-medium.alignright, .full-width .site-content .wp-caption.alignright {
+margin-right: -25px;
+width: 25%;
+}
+
+
+#secondary {
+background-color: #fff;
+border-top: none;
+color: #444;
+}
+
+#primary-sidebar h1,
+#primary-sidebar h2,
+#primary-sidebar h3,
+#primary-sidebar h4,
+#primary-sidebar p {
+	color: #444;
+}
+
+#primary-sidebar a {
+	color: #225E9B;
+	text-decoration: none;
+}
+
+#primary-sidebar a:hover {
+	color: #225E9B;
+	text-decoration: underline;
+}
+
+#primary-sidebar input, 
+#primary-sidebar textarea {
+border: 1px solid #ccc;
+border-radius: 2px;
+color: #444;
+padding: 8px 10px 7px;
+}
+
+
+.st-tag-cloud a {
+	color: #225e9b !important;
+}
+
+
+}
+
+
+
+@media screen and (min-width: 1280px) {
+
+body {
+	background: #f5f5f5 url("images/shadow_bg_1260.jpg") repeat-y center;
+}
+
+.site-content .entry-header, .site-content .entry-content, .site-content .entry-summary, .site-content .entry-meta, .page-content {
+max-width: 760px;
+}
+
+.full-width .site-content blockquote.alignleft, .full-width .site-content img.size-full.alignleft, .full-width .site-content img.size-large.alignleft, .full-width .site-content img.size-medium.alignleft, .full-width .site-content .wp-caption.alignleft {
+margin-left: -100px;
+width: 35%;
+}
+
+.full-width .site-content blockquote.alignright, .full-width .site-content img.size-full.alignright, .full-width .site-content img.size-large.alignright, .full-width .site-content img.size-medium.alignright, .full-width .site-content .wp-caption.alignright {
+margin-right: -100px;
+width: 35%;
+}
+
+}

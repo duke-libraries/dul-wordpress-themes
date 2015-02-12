@@ -1,0 +1,3 @@
+<script src="http://blogs.library.duke.edu/wp-content/themes/library_news_theme/includes/dukeondemand_widget.js"></script>
+
+<script type="text/javascript">new MiroCommunity.Widget({"version":2,"domain":"ondemand.duke.edu","source":"search/%7Blibrary%20libraries%7D?sort=latest", "size":"medium","count":"5","title":"Watch Videos on Duke on Demand","logo":"http://s3.mirocommunity.org.s3.amazonaws.com/duke/localtv/widgetsettings_thumbs/1/140x110.png","stylesheet":"http://blogs.library.duke.edu/wp-content/themes/library_news_theme/includes/dukeondemand_styles.css","bg":"white","text":"black"}).render();</script>
