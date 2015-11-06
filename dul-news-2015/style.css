@@ -41,7 +41,7 @@ Template: twentyfourteen
 
 #feature-slideshow > div {
 	width: 100%;
-	
+
 }
 
 #feature-slideshow .feature_image {
@@ -245,7 +245,7 @@ padding: 20px 20px 10px 20px;
 }
 
 #exhibit-slideshow a {
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 
@@ -385,9 +385,9 @@ padding: 20px 20px 10px 20px;
 	margin-left: auto;
 }
 
-#exhibit-nav a { 
-	margin: 6px 6px 0 6px; 
-	
+#exhibit-nav a {
+	margin: 6px 6px 0 6px;
+
 	width: 12px;
 	height: 12px;
 	display: block;
@@ -413,7 +413,7 @@ padding: 20px 20px 10px 20px;
 	color: #fff;
 }
 
-#exhibit-nav a.activeSlide { 
+#exhibit-nav a.activeSlide {
 	background: #333;
 	color: #333;
 	}
@@ -496,7 +496,7 @@ padding: 20px 20px 10px 20px;
 
 
 	/* Scroller +++ */
-	
+
 	 .jcarousel-skin-tango {
 	 	padding: 0 20px 0 20px;
 	 }
@@ -599,6 +599,32 @@ padding: 20px 20px 10px 20px;
 	}
 
 
+/* All Events Page */
+
+.event-item {
+	margin-top: 1.25em;
+}
+
+.event-item .displaydate,
+.event-item .displaytime,
+.event-item .event-location {
+	font-style: italic;
+	color: #999;
+}
+
+.event-item .event-description {
+	margin-top: 1em;
+}
+
+.event-item .footnote {
+	margin-bottom: 0;
+	padding-bottom: 1.25em;
+	border-bottom: 1px dotted #ccc;
+	font-size: .9em;
+}
+
+
+
 /* Blogs List ++++++++++++++++++++ */
 
 #blogs {
@@ -632,7 +658,7 @@ padding: 20px 20px 10px 20px;
 }
 
 #blogs .blogthumb img {
-	border: 5px solid #fff;	
+	border: 5px solid #fff;
 }
 
 #blogs .blogcontent {
@@ -922,7 +948,7 @@ padding-bottom: .5em;
 .s2_form_widget input {
 	color: #fff !important;
 }
-	
+
 .s2_form_widget #s2email {
 	color: #444 !important;
 }
@@ -979,7 +1005,7 @@ text-transform: normal;
 }
 
 
-.primary-navigation li:hover > a, 
+.primary-navigation li:hover > a,
 .primary-navigation li.focus > a {
 background-color: #ddd;
 color: #333;
@@ -990,7 +1016,7 @@ color: #333;
 background-color: #eee;
 }
 
-.primary-navigation ul li:hover > a, 
+.primary-navigation ul li:hover > a,
 .primary-navigation ul li.focus > a {
 	background-color: #ddd;
 }
@@ -1081,13 +1107,36 @@ background-color: #eee;
 	font-style: normal;
 }
 
+.image-left {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+/* All Events Page */
+
+#all-library-events .displaydate,
+#all-library-events .displaytime,
+#all-library-events .event-location {
+	color: #999;
+}
+
+#all-library-events .event-description {
+	margin-top: .5em;
+	border-top: 1px dotted #ddd;
+	padding-top: .5em;
+}
+
+#all-library-events .event-image-wrapper {
+	display: none;
+}
+
 
 @media screen and (min-width: 640px) {
 
 	#feature-slideshow .feature_text_bg {
 		margin: -20% 0 0 0;
 	}
-	
+
 	.page-id-40 .content-area,
 	.page-id-90 .content-area,
 	.page-id-178 .content-area,
@@ -1096,59 +1145,63 @@ background-color: #eee;
 		padding-top: 0 !important;
 		padding: 0;
 	}
-	
+
+	#all-library-news .content {
+		width: calc(100% - 6.5vw);
+	}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-	
+
 	.home-wrapper {
 		padding: 30px;
 	}
-	
+
 	#feature-nav .feature-thumb {
 		/*width: 22.4vw;*/
 		width: 25%;
 	}
-	
+
 	#home-rss-feed {
 		float: right;
 		clear: none;
 		width: 49%
 	}
-	
+
 	#library_exhibits {
 		float: left;
 		clear: none;
 		width: 48%;
 	}
-	
+
 	#exhibit-slideshow .item-content p a {
 		font-size: 2vw;
 	}
-	
+
 	#exhibit-slideshow .item-content p {
 		font-size: 1.5vw;
 	}
-	
+
 	#library_events {
 		float: left;
 		clear: none;
 		width: 48%;
 	}
-	
+
 	#blogs {
 		float: right;
 		clear: none;
 		width: 49%
 	}
-	
+
 	#library_promo_wrapper {
 		float: left;
 		clear: none;
 		width: 48%;
 	}
-	
-	
+
+
 	/* Videos Block */
 
 	#library-videos-block {
@@ -1165,7 +1218,7 @@ background-color: #eee;
 
 
 	#library-videos-block .thumbnail img {
-		
+
 	}
 
 }
@@ -1176,68 +1229,68 @@ background-color: #eee;
 	.home-wrapper {
 		padding: 30px;
 	}
-	
+
 	#feature-slideshow-wrapper {
 		width: 66%;
 		float: left
 	}
-	
+
 	#feature-slideshow .feature_text_bg h2 {
 		font-size: 2.5vw;
 	}
-	
+
 	#feature-slideshow .feature_text_bg p {
 		font-size: 1.5vw;
 	}
-	
+
 	#feature-nav .feature-thumb {
 		/*width: 13.1vw;*/
 		width: 25%;
 		max-width: 198px;
 	}
-	
+
 	#feature-nav .feature-thumb a {
 		border: 10px solid #fff;
 		border-width: .75vw;
 	}
-	
+
 	#feature-nav .cycle-pager-active a, #feature-nav .feature-thumb a:hover {
 		border: 10px solid #ffd960;
 		border-width: .75vw;
 	}
-	
+
 	#home-rss-feed {
 		float: right;
 		clear: none;
 		width: 31.5%
 	}
-	
+
 	#library_exhibits {
 		float: left;
 		clear: none;
 		width: 48%;
 	}
-	
+
 	#exhibit-slideshow .item-content p a {
 		font-size: 2vw;
 	}
-	
+
 	#exhibit-slideshow .item-content p {
 		font-size: 1.5vw;
 	}
-	
+
 	#library_events {
 		float: right;
 		clear: none;
 		width: 49%;
 	}
-	
+
 	#blogs {
 		float: left;
 		clear: none;
 		width: 48%
 	}
-	
+
 	#library_promo_wrapper {
 		float: left;
 		clear: both;
@@ -1245,7 +1298,7 @@ background-color: #eee;
 		overflow: hidden;
 		padding-bottom: 20px;
 	}
-		
+
 	#library_promo_wrapper .library_promo {
 		padding-right: 15px;
 		border-top: none;
@@ -1254,11 +1307,11 @@ background-color: #eee;
 		float: left;
 		overflow: hidden;
 	}
-	
+
 	#library_promo_wrapper .last {
 		border-right: none;
 	}
-	
+
 	/* Videos Block */
 
 	#library-videos-block {
@@ -1276,9 +1329,9 @@ background-color: #eee;
 
 
 	#library-videos-block .thumbnail img {
-		
+
 	}
-	
+
 }
 
 
@@ -1342,7 +1395,7 @@ background-color: #eee;
 		text-decoration: underline;
 	}
 
-	#primary-sidebar input, 
+	#primary-sidebar input,
 	#primary-sidebar textarea {
 	border: 1px solid #ccc;
 	border-radius: 2px;
@@ -1419,7 +1472,7 @@ background-color: #eee;
 		text-decoration: underline;
 	}
 
-	#primary-sidebar input, 
+	#primary-sidebar input,
 	#primary-sidebar textarea {
 	border: 1px solid #ccc;
 	border-radius: 2px;
@@ -1463,27 +1516,27 @@ background-color: #eee;
 	margin-right: -100px;
 	width: 35%;
 	}
-	
+
 	#feature-slideshow .feature_text_bg h2 {
 		font-size: 32px;
 	}
-	
+
 	#feature-slideshow .feature_text_bg p {
 		font-size: 19px;
 	}
-	
+
 	#exhibit-slideshow .item-content p a {
 		font-size: 26px;
 	}
-	
+
 	#exhibit-slideshow .item-content p {
 		font-size: 18px;
 	}
-	
+
 	#home-rss-feed {
 		margin-bottom: 25px;
 	}
-	
+
 	.jcarousel-skin-tango .jcarousel-container-vertical {
 		height: 362px;
 	}
@@ -1492,5 +1545,5 @@ background-color: #eee;
 	.jcarousel-skin-tango .jcarousel-clip-vertical {
 		height: 362px;
 	}
-	
+
 }
