@@ -13,7 +13,8 @@ add_action( 'wp_enqueue_scripts', 'dulnews2015_dequeue_styles', 11 );
 
 wp_enqueue_style( 'dulnews2015-ie', get_stylesheet_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style' ), '1.0' );
 
-$wp_styles->add_data( 'dulnews2015-ie', 'conditional', 'lt IE 9' );
+// broken in 4.4?
+//$wp_styles->add_data( 'dulnews2015-ie', 'conditional', 'lt IE 9' );
 
 
 
@@ -27,7 +28,7 @@ function blogs_tinymce_config( $init ) {
 		$init['extended_valid_elements'] = $valid_iframe;
 	}
 	return $init;
-	
+
 }
 add_filter('tiny_mce_before_init', 'blogs_tinymce_config');
 
@@ -52,8 +53,8 @@ add_filter('the_content_feed', 'featuredtoRSS');
 
 
 // ADD POST THUMBNAILS
-if ( function_exists( 'add_theme_support' ) ) { 
-	add_theme_support( 'post-thumbnails' ); 
+if ( function_exists( 'add_theme_support' ) ) {
+	add_theme_support( 'post-thumbnails' );
 }
 
 
@@ -61,85 +62,85 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 
 // Create custom post type
-		
+
 add_action( 'init', 'create_my_post_types' );
 
 function create_my_post_types() {
-	
+
 	register_post_type( 'duke_featured_posts',
-					   
+
 		array(
-			  
+
 			'labels' => array(
-							  
+
 				'name' => __( 'Featured Posts' ),
-				
+
 				'singular_name' => __( 'Featured Post' )
-				
+
 			),
-			
+
 			'public' => true,
-			
+
 			'menu_position' => 5,
-			
+
 			'hierarchical' => true,
-			
+
 			'query_var' => true,
-			
+
 			'supports' => array( 'title', 'custom-fields', 'excerpt', 'editor', 'thumbnail' ),
-			
+
 		)
 	);
-	
-	
+
+
 	register_post_type( 'duke_exhibits',
-					   
+
 		array(
-			  
+
 			'labels' => array(
-							  
+
 				'name' => __( 'Library Exhibits' ),
-				
+
 				'singular_name' => __( 'Library Exhibit' )
-				
+
 			),
-			
+
 			'public' => true,
-			
+
 			'menu_position' => 5,
-			
+
 			'hierarchical' => true,
-			
+
 			'query_var' => true,
-			
+
 			'supports' => array( 'title', 'excerpt', 'editor', 'thumbnail' ),
-			
+
 		)
 	);
-	
-	
+
+
 	register_post_type( 'duke_blogs',
-					   
+
 		array(
-			  
+
 			'labels' => array(
-							  
+
 				'name' => __( 'Library Blogs' ),
-				
+
 				'singular_name' => __( 'Library Blogs' )
-				
+
 			),
-			
+
 			'public' => true,
-			
+
 			'menu_position' => 5,
-			
+
 			'hierarchical' => true,
-			
+
 			'query_var' => true,
-			
+
 			'supports' => array( 'title', 'excerpt', 'thumbnail' ),
-			
+
 		)
 	);
 
