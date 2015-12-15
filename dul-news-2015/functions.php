@@ -146,4 +146,14 @@ function create_my_post_types() {
 
 }
 
+
+// work with external permalinks
+add_filter( 'epr_post_types', 'epr_function' );
+function epr_function( $content_types ){
+	$content_types = array('duke_featured_posts', 'duke_exhibits', 'duke_blogs');
+	return $content_types;
+}
+
+
+
 ?>
