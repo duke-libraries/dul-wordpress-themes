@@ -15,6 +15,19 @@ $feed->handle_content_type();
 ?>
 
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Library Videos</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	
+	<link rel='stylesheet' href='videos960.css' type='text/css' />
+	
+</head>
+<body>
+
 
 <div id="library-videos-block">
 
@@ -48,3 +61,5 @@ $feed->handle_content_type();
 	
 </div>
 
+</body>
+</html>

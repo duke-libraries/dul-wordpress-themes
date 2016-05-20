@@ -82,6 +82,25 @@
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 		</a>
+
+		<div id="searchform" class="headersearch">
+			<form action="/news-events-exhibits/search-results/" id="cse-search-box">
+				<input type="hidden" name="cx" value="010520721692465143024:76gaailhxhm" />
+				<input type="hidden" name="cof" value="FORID:10" />
+				<input type="hidden" name="ie" value="UTF-8" />
+				<input class="search-input" type="text" name="q" size="15" placeholder="search the blogs..." />
+				<button class="search-submit" name="sa" value="Search" type="submit">Go</button>
+			</form>
+		</div>
+
+		<div id="mobilesearch">
+			<a href="/news-events-exhibits/search-results/">
+			<img src="/wp-content/themes/dul-news-2015/images/search-icon.png" alt="">
+			<p>Search</p>
+			</a>
+		</div>
+
+
 	</div>
 
 	<div id="library_logo"><a href="http://library.duke.edu" title="Duke University Libraries"><img src="/wp-content/themes/dul-news-2015/images/library_logo_transparent.png" alt="Duke University Libraries" border="0"></a></div>
