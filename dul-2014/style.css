@@ -203,6 +203,28 @@ padding-bottom: .5em;
 }
 
 
+/* Hyphenation */
+
+.entry-content,
+.entry-summary,
+.page-content,
+.nav-links,
+.comment-content,
+.widget {
+	-webkit-hyphens: none;
+	-moz-hyphens:    none;
+	-ms-hyphens:     none;
+	hyphens:         none;
+	word-wrap: normal;
+}
+
+
+/* Bullets */
+
+.entry-content ul li {
+		margin-bottom: 1em;
+}
+
 
 
 /* Nav */

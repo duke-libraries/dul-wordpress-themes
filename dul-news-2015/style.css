@@ -26,7 +26,6 @@ Template: twentyfourteen
 }
 
 
-
 /* FEATURE ITEMS ++++++++++++++ */
 
 #feature-slideshow-wrapper {
@@ -679,6 +678,25 @@ padding: 20px 20px 10px 20px;
 }
 
 
+/* blog posts */
+
+.wp-caption-text {
+
+	font-size: 15pt;
+	line-height: 1.2;
+	color: #999;
+
+}
+
+.aligncenter .wp-caption-text {
+	text-align: center;
+	border-top: 2px solid #eee;
+  margin-top: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+
 /* library promos ++++++++++++ */
 
 #library_promo_wrapper {
@@ -856,8 +874,107 @@ color: #eee;
 text-decoration: underline;
 }
 
+#mobilesearch {
+	display: block;
+	background: #333;
+	background: rgba(33,33,33,.5);
+	text-align: center;
+	border-radius: 5px;
+	position: absolute;
+	top: 4%;
+	right: 4%;
+	padding: 3px;
+}
+
+#mobilesearch img {
+	width: 40%;
+}
+
+#mobilesearch a {
+	display: block;
+}
+
+#mobilesearch p {
+	margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#searchform {
+	display: block;
+    width: 200px;
+    position: absolute;
+    margin-top: -40px;
+    margin-right: 10px;
+    right: 0;
+    text-align: right;
+}
+
+#searchform.headersearch {
+	display: none;
+}
+
+#searchform .search-submit {
+	display: inline-block;
+	padding: 8px 10px 9px 10px;
+	background-color: #222;
+}
+
+#searchform .search-input {
+	width: 120px;
+	font-size: 12px;
+	font-family: Lato, sans-serif;
+}
+
+@media screen and (min-width: 673px) {
+
+	#mobilesearch {
+		display: none;
+	}
+
+	#searchform.headersearch {
+		display: block;
+	}
+
+	#searchform {
+		margin-right: 30px;
+	}
+
+	#searchform .search-input {
+		width: auto;
+	}
+}
 
 
+
+/* Google CSE results */
+
+.cse .gsc-control-cse, .gsc-control-cse {
+	padding: 0 !important;
+}
+
+.gsc-control-cse table,
+.gsc-control-cse td {
+    border-width: 0 0 0 0;
+}
+
+.cse input.gsc-input, input.gsc-input {
+	padding: 9px !important;
+}
+
+input.gsc-search-button {
+	height: 37px !important;
+	min-width: 75px !important;
+}
+
+div.gcsc-branding {
+	/*display: block;
+	float: left;
+	margin-left: -5000px;
+	position: absolute !important;*/
+}
 
 
 
@@ -1303,7 +1420,7 @@ background-color: #eee;
 		padding-right: 15px;
 		border-top: none;
 		border-right: 1px dotted #ccc;
-		width: 15.9%;
+		width: 20%;
 		float: left;
 		overflow: hidden;
 	}
