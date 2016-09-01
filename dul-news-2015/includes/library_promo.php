@@ -52,7 +52,7 @@
 			<li><a href="//www.instagram.com/dukelibraries/">Instagram</a></li>
 			<li><a href="//www.flickr.com/photos/dukeunivlibraries/">Flickr</a></li>
 			<li><a href="//dukelibraries.tumblr.com/">Tumblr</a></li>
-			<li><a href="//lists.duke.edu/sympa/subscribe/libraryeventsandnews">Join Our Email List</a></li>
+			<li><a href="//library.duke.edu/about/sign-our-newsletter">Join Our Email List</a></li>
 		</ul>
 
 	</div>
