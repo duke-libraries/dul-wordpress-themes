@@ -101,6 +101,15 @@ function twentyfourteen_posted_on() {
 }
 endif;
 
+//fix alt text for sidebar thumbnails!
+function add_alt_text( $attr, $attachment = null ) {
+
+	$attr['alt'] = 'descriptive image';
+
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes','add_alt_text', 10, 2
+);
 
 
 ?>

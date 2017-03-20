@@ -30,6 +30,10 @@ text-decoration: underline;
 color: #225E9B;
 }
 
+.entry-meta a {
+	color: #767676;
+}
+
 .entry-meta .tag-links a:hover:before {
 	border-right-color: #225E9B;
 }
@@ -167,7 +171,7 @@ padding-bottom: .5em;
 }
 
 .cat-links a {
-	color: #999;
+	color: #767676;
 }
 
 .site-description {
@@ -190,7 +194,7 @@ padding-bottom: .5em;
 
 	font-size: 15pt;
 	line-height: 1.2;
-	color: #999;
+	color: #767676;
 
 }
 

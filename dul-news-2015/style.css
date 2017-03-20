@@ -25,6 +25,11 @@ Template: twentyfourteen
 	font-size: 18px;
 }
 
+.hide-link-text {
+	line-height: 0 !important;
+	font-size: 0 !important;
+}
+
 
 /* FEATURE ITEMS ++++++++++++++ */
 
@@ -296,7 +301,8 @@ padding: 20px 20px 10px 20px;
 
 #exhibit-pager span {
 	display: inline-block;
-	color: #999;
+	/*color: #999;*/
+	color: #225E9B;
 	cursor: pointer;
 	font-size: 200%;
 	line-height: .7;
@@ -308,7 +314,8 @@ padding: 20px 20px 10px 20px;
 }
 
 #exhibit-pager .cycle-pager-active {
-	color: #333;
+	/*color: #333;*/
+	color: #1b3854;
 }
 
 
@@ -376,6 +383,10 @@ padding: 20px 20px 10px 20px;
 	background: #ccc url('./images/exhibit-bg.png') repeat-x;
 	overflow: hidden;
 	margin: 0 20px 0 20px;
+}
+
+#exhibit-nav-holder a {
+	color: #1c4e81;
 }
 
 #exhibit-nav {

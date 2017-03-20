@@ -78,9 +78,11 @@
 <div id="page" class="hfeed site">
 	<?php if ( get_header_image() ) : ?>
 
+		<?php $theBlogTitle = get_bloginfo(); ?>
+
 	<div id="site-header">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+			<img alt="<?php echo $theBlogTitle; ?>" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 		</a>
 
 		<div id="searchform" class="headersearch">
@@ -88,7 +90,7 @@
 				<input type="hidden" name="cx" value="010520721692465143024:76gaailhxhm" />
 				<input type="hidden" name="cof" value="FORID:10" />
 				<input type="hidden" name="ie" value="UTF-8" />
-				<input class="search-input" type="text" name="q" size="15" placeholder="search the blogs..." />
+				<input class="search-input" type="text" name="q" size="15" placeholder="search the blogs..." aria-label="Search the Blogs" />
 				<button class="search-submit" name="sa" value="Search" type="submit">Go</button>
 			</form>
 		</div>

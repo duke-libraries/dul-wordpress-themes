@@ -15,10 +15,12 @@
 		$tags = array("<p>", "</p>");
 		$myExcerpt = str_replace($tags, "", $myExcerpt);
 
+		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
+
 		?>
 
 		<a href="<?php echo $myExcerpt; ?>" title="<?php the_title(); ?>">
-		<?php the_post_thumbnail(); ?>
+		 <img src="<?php echo $thumbnail_src[0]; ?>" alt="blog image" />
 		</a>
 
 		<?php endwhile; ?>
@@ -29,9 +31,13 @@
 	<div class="blogcontent">
 
 		<h3>Browse Our Other Blogs</h3>
-		<p>Browse our 20 distinct library blogs at Duke University...</p>
 
-		<select name="blog-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select a Blog</option>
+
+		<label for="blog-dropdown" class="blogs-select">
+			<p>Browse our 20 distinct library blogs at Duke University...</p>
+		</label>
+
+		<select name="blog-dropdown" id="blog-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select a Blog</option>
 
 
 

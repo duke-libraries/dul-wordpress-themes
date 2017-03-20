@@ -28,7 +28,7 @@
 					<input type="hidden" name="cx" value="010520721692465143024:76gaailhxhm" />
 					<input type="hidden" name="cof" value="FORID:10" />
 					<input type="hidden" name="ie" value="UTF-8" />
-					<input class="search-input" type="text" name="q" size="20" placeholder="search the blogs..." />
+					<input class="search-input" type="text" name="q" size="20" placeholder="search the blogs..." aria-label="Search the Blogs" />
 					<button class="search-submit" name="sa" value="Search" type="submit">Go</button>
 				</form>
 			</div>
