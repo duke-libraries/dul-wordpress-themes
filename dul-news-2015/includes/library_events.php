@@ -55,6 +55,7 @@ endif;
 
     $DST = date('I');
     $nowDate = new DateTime();
+    $eventCount = 0;
 
 	// Loop through each feed item and display each item as a hyperlink.
     foreach ( $rss_items as $item ) :
@@ -64,6 +65,8 @@ endif;
 		<?php
 
 			// limit to 60 characters
+
+
 
 			$myTitle = esc_html( $item->get_title() );
 
@@ -75,6 +78,8 @@ endif;
             $displayDate = new DateTime($itemDate);
 
         if ($displayDate > $nowDate) {
+
+          $eventCount++;
 
 
 		?>
@@ -107,10 +112,19 @@ endif;
 
     endforeach;
 
+    if ($eventCount == 0) {
+      echo '<li><em>There are no events scheduled at this time</em></li>';
+    }
+
     ?>
 
 </ul>
 
-<div class="viewall"><a href="all-library-events/" class="all_events">View All Events &raquo;</a></div>
+<?php
+
+  if ($eventCount != 0) {
+    echo '<div class="viewall"><a href="all-library-events/" class="all_events">View All Events &raquo;</a></div>';
+  }
+?>
 
 </div>

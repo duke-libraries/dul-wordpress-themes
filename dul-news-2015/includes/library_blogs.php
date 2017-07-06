@@ -34,7 +34,7 @@
 
 
 		<label for="blog-dropdown" class="blogs-select">
-			<p>Browse our 20 distinct library blogs at Duke University...</p>
+			<p>Browse our 14 distinct library blogs at Duke University...</p>
 		</label>
 
 		<select name="blog-dropdown" id="blog-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select a Blog</option>
@@ -74,72 +74,33 @@
 
 			?>
 
-				<option value="http://blogs.library.duke.edu/bitstreams">Bitstreams: Notes from the Digital Projects Team</option>
+				<option value="https://blogs.library.duke.edu/bitstreams">Bitstreams: Notes from the Digital Projects Team</option>
 
-				<option value="http://cit.duke.edu/blog/">Center for Instructional Technology</option>
+				<option value="https://cit.duke.edu/blog/">Center for Instructional Technology</option>
 
+				<option value="https://blogs.library.duke.edu/data/">Data and Visualization Services</option>
 
-				<option value="http://blogs.library.duke.edu/data/">Data and Visualization Services</option>
+				<option value="https://blogs.library.duke.edu/rubenstein/">The Devils Tale</option>
 
+				<option value="https://blogs.library.duke.edu/digital-collections/">Digital Collections</option>
 
-				<option value="http://blogs.library.duke.edu/rubenstein/">The Devils Tale</option>
-
-
-				<option value="http://blogs.library.duke.edu/digital-collections/">Digital Collections</option>
-
-
-				<option value="http://blogs.library.duke.edu/divinity/">Divinity School Library Spotlight</option>
-
-
-				<option value="http://blogs.library.duke.edu/dcthree/">Duke Collaboratory for Classics Computing</option>
-
+				<option value="https://blogs.library.duke.edu/dcthree/">Duke Collaboratory for Classics Computing</option>
 
 				<option value="http://archives.mc.duke.edu/blog">Duke Medical Center Archives Blog</option>
 
-
 				<option value="http://sites.fuqua.duke.edu/fordlibrary/">Fuqua School Ford Library</option>
-
 
 				<option value="http://dukelawref.blogspot.com/">The Goodson Blogson</option>
 
+				<option value="https://blogs.library.duke.edu/answerperson/">Library Answer Person</option>
 
-				<option value="http://blogs.library.duke.edu/humanities/">Humanities@Duke University</option>
-
-
-				<!---<option value="http://blogs.library.duke.edu/ilab/blog/">Innovation Lab</option>--->
-
-
-				<option value="http://blogs.library.duke.edu/dukelibrariesinstruction/">Instruction &amp; Outreach</option>
-
-
-				<option value="http://blogs.library.duke.edu/answerperson/">Library Answer Person</option>
-
-
-				<!---<option value="http://blogs.library.duke.edu/libraryhacks/">Library Hacks</option>--->
-
-
-				<option value="http://blogs.library.duke.edu/all-posts/">Library News, Events, &amp; Exhibits</option>
-
+				<option value="https://blogs.library.duke.edu/all-posts/">Library News, Events, &amp; Exhibits</option>
 
 				<option value="https://mclibrary.duke.edu/about/blog/">Medical Center Library</option>
 
+				<option value="https://blogs.library.duke.edu/preservation/">Preservation Underground</option>
 
-				<option value="http://blogs.library.duke.edu/preservation/">Preservation Underground</option>
-
-
-				<option value="http://blogs.library.duke.edu/renovation/">Rubenstein Library Renovation</option>
-
-
-				<option value="http://blogs.library.duke.edu/scholcomm/">Scholarly Communications</option>
-
-
-				<option value="http://blogs.library.duke.edu/techmentor/">Technology Mentor Program</option>
-
-
-				<option value="http://dukeluab.blogspot.com/">Undergraduate Advisory Board</option>
-
-
-
+				<option value="https://blogs.library.duke.edu/scholcomm/">Scholarly Communications</option>
 
 
 		</select>

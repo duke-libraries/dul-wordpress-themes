@@ -28,7 +28,7 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 
-	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
 
 
 	<?php

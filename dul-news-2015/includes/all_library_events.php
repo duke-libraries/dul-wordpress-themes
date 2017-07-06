@@ -23,8 +23,9 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
 	$rss_items_count = $rss->get_items(0, $maxitems);
 
 	$DST = date('I');
-    $nowDate = new DateTime();
+  $nowDate = new DateTime();
 	$itemCount = 0;
+  $currentEvents = 0;
 
 	foreach ( $rss_items_count as $item ) :
 
@@ -37,57 +38,74 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
 			}
 
+      if ($displayDate >= $nowDate) {
+
+				$currentEvents++;
+
+			}
+
+
+
 	endforeach;
 
 	// +++ //
 
-	$rss_items_display = $rss->get_items($itemCount, $maxitems);
+    if ($currentEvents == 0) {
 
-	foreach ( $rss_items_display as $item ) :
+      echo '<p><em>There are no events scheduled at this time</em></p>';
 
-		$temp_url = $item->get_permalink();
+    } else {
 
-			// 1
-			if (strpos($temp_url, 'calendar.duke.edu') !== false) {
-				$theSource = "Public Event";
-				$theSourceURL = "http://library.duke.edu/news/events.html";
-				$theThumb = "public_event.jpg";
-			}
+  	$rss_items_display = $rss->get_items($itemCount, $maxitems);
 
-			else {
-				$theSource = "For Duke Faculty, Staff & Students";
-				$theSourceURL = "http://library.duke.edu/news/events.html";
-				$theThumb = "duke_event.jpg";
-			}
+  	foreach ( $rss_items_display as $item ) :
 
+  		$temp_url = $item->get_permalink();
 
-		$temp_description = $item->get_description();
-		//$temp_description = $item->get_content();
+  			// 1
+  			if (strpos($temp_url, 'calendar.duke.edu') !== false) {
+  				$theSource = "Public Event";
+  				$theSourceURL = "http://library.duke.edu/news/events.html";
+  				$theThumb = "public_event.jpg";
+  			}
 
-		// clean up description
-		$temp_description = str_replace('<div>&nbsp;</div>','',$temp_description);
-		$temp_description = str_replace('&nbsp;','',$temp_description);
-		$temp_description = str_replace('<p></p>','',$temp_description);
-		$temp_description = str_replace('See description','',$temp_description);
-		$temp_description = str_replace('<div class="event-description">&nbsp;</div>','',$temp_description);
-		$temp_description = preg_replace("/<span[^>]+\>/i", "", $temp_description);
-
-		$displayTitle = $item->get_title(true);
-		$displayTitle = str_replace('&amp;', '&', $displayTitle);
-
-	?>
-
-	<div class="event-item">
-		<h3><?php if ($item->get_permalink()) echo '<a href="' . $item->get_permalink() . '">'; echo $displayTitle; if ($item->get_permalink()) echo '</a>'; ?></h3>
-		<p><?php echo $temp_description ?></p>
-		<p class="footnote"><em><?php echo $theSource; ?> &mdash; <?php if ($item->get_permalink()) echo '<a href="' . $item->get_permalink() . '">'; echo 'more information &raquo;'; if ($item->get_permalink()) echo '</a>'; //echo $item->get_date('F j, Y'); ?></em><br /></p>
-
-	</div>
+  			else {
+  				$theSource = "For Duke Faculty, Staff & Students";
+  				$theSourceURL = "http://library.duke.edu/news/events.html";
+  				$theThumb = "duke_event.jpg";
+  			}
 
 
-<?php endforeach;
+  		$temp_description = $item->get_description();
+  		//$temp_description = $item->get_content();
+
+  		// clean up description
+  		$temp_description = str_replace('<div>&nbsp;</div>','',$temp_description);
+  		$temp_description = str_replace('&nbsp;','',$temp_description);
+  		$temp_description = str_replace('<p></p>','',$temp_description);
+  		$temp_description = str_replace('See description','',$temp_description);
+  		$temp_description = str_replace('<div class="event-description">&nbsp;</div>','',$temp_description);
+  		$temp_description = preg_replace("/<span[^>]+\>/i", "", $temp_description);
+
+  		$displayTitle = $item->get_title(true);
+  		$displayTitle = str_replace('&amp;', '&', $displayTitle);
+
+  	?>
+
+  	<div class="event-item">
+  		<h3><?php if ($item->get_permalink()) echo '<a href="' . $item->get_permalink() . '">'; echo $displayTitle; if ($item->get_permalink()) echo '</a>'; ?></h3>
+  		<p><?php echo $temp_description ?></p>
+  		<p class="footnote"><em><?php echo $theSource; ?> &mdash; <?php if ($item->get_permalink()) echo '<a href="' . $item->get_permalink() . '">'; echo 'more information &raquo;'; if ($item->get_permalink()) echo '</a>'; //echo $item->get_date('F j, Y'); ?></em><br /></p>
+
+  	</div>
+
+
+    <?php endforeach;
+
+  }
 
 endif;
+
 
 
 ?>
