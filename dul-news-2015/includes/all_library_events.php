@@ -9,7 +9,7 @@ require_once(ABSPATH . '/php/autoloader.php');
 
 // Pipes EOL'd
 //$rss = fetch_feed('https://pipes.yahoo.com/pipes/pipe.run?_id=a4b573af3dddcd18fc53354bb62123d7&_render=rss');
-$rss = fetch_feed('https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/39/dukedukeduke.xml');
+$rss = fetch_feed('https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/101/dukedukeduke.xml');
 
 //$rss->enable_order_by_date(true);
 $rss->enable_order_by_date(false);
@@ -86,6 +86,7 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
   		$temp_description = str_replace('See description','',$temp_description);
   		$temp_description = str_replace('<div class="event-description">&nbsp;</div>','',$temp_description);
   		$temp_description = preg_replace("/<span[^>]+\>/i", "", $temp_description);
+      $temp_description = str_replace("<img class='event-image' alt='event image' src='' />","",$temp_description);
 
   		$displayTitle = $item->get_title(true);
   		$displayTitle = str_replace('&amp;', '&', $displayTitle);

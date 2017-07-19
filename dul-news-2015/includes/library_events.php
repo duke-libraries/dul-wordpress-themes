@@ -1,6 +1,6 @@
 <div id="library_events">
 
-<h3>Upcoming Library Events <a href="https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/39/dukedukeduke.xml" title="RSS feed of all library events"><img alt="rss" src="http://library.duke.edu/imgs/common/icons/feed-icon-16x16.gif" style="border: medium none" /></a></h3>
+<h3>Upcoming Library Events <a href="https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/101/dukedukeduke.xml" title="RSS feed of all library events"><img alt="rss" src="http://library.duke.edu/imgs/common/icons/feed-icon-16x16.gif" style="border: medium none" /></a></h3>
 
 <?php // Get RSS Feed(s)
 
@@ -13,7 +13,7 @@ require_once(ABSPATH . '/php/autoloader.php');
 
 // Pipes EOL'd
 //$rss = fetch_feed('https://pipes.yahoo.com/pipes/pipe.run?_id=a4b573af3dddcd18fc53354bb62123d7&_render=rss');
-$rss = fetch_feed('https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/39/dukedukeduke.xml');
+$rss = fetch_feed('https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/101/dukedukeduke.xml');
 
 //$rss->enable_order_by_date(true);
 $rss->enable_order_by_date(false);
