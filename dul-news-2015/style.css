@@ -617,9 +617,33 @@ padding: 20px 20px 10px 20px;
 
 .event-item .displaydate,
 .event-item .displaytime,
-.event-item .event-location {
+.event-item .event-location,
+.event-item .event-campus {
 	font-style: italic;
 	color: #999;
+}
+
+.event-item .event-location,
+.event-item .event-campus {
+	display: block;
+	float: left;
+}
+
+.event-item .event-campus {
+	margin-left: .25em;
+	margin-bottom: 1em;
+}
+
+.event-item .event-location::after {
+	content: ',';
+}
+
+.event-item p {
+	clear: both;
+}
+
+.event-item .event-campus {
+
 }
 
 .event-item .event-description {
@@ -631,6 +655,7 @@ padding: 20px 20px 10px 20px;
 	padding-bottom: 1.25em;
 	border-bottom: 1px dotted #ccc;
 	font-size: .9em;
+	margin-top: 1em;
 }
 
 

@@ -56,6 +56,8 @@ endif;
     $DST = date('I');
     $nowDate = new DateTime();
     $eventCount = 0;
+    $dupTitleCheck = "";
+    $dupLinkCheck = "";
 
 	// Loop through each feed item and display each item as a hyperlink.
     foreach ( $rss_items as $item ) :
@@ -69,23 +71,21 @@ endif;
 
 
 			$myTitle = esc_html( $item->get_title() );
-
-            $myTitle = str_replace('&amp;','&',$myTitle);
-
+      $myTitle = str_replace('&amp;','&',$myTitle);
 			$myShortTitle = myTruncate($myTitle, 50, " ");
 
-            $itemDate = $item->get_date('Y/m/d H:i');
-            $displayDate = new DateTime($itemDate);
+      $itemLink = $item->get_permalink();
+      $itemDate = $item->get_date('Y/m/d H:i');
+      $displayDate = new DateTime($itemDate);
 
-        if ($displayDate > $nowDate) {
+      if ( $displayDate > $nowDate && $dupTitleCheck != $myTitle && $dupLinkCheck != $itemLink ) {
 
-          $eventCount++;
-
+        $eventCount++;
 
 		?>
 
     <li>
-        <a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo $myTitle; ?>'><?php echo $myShortTitle; ?></a>
+        <a href='<?php echo esc_url( $itemLink ); ?>' title='<?php echo $myTitle; ?>'><?php echo $myShortTitle; ?></a>
 		<span class="rssdate">
 
             <?php
@@ -109,6 +109,9 @@ endif;
     <?php
 
         } // end if loop (date check)
+
+    $dupTitleCheck = $myTitle;
+    $dupLinkCheck = $itemLink;
 
     endforeach;
 
