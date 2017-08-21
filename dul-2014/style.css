@@ -12,8 +12,10 @@ Template: twentyfourteen
 
 
 @media screen and (min-width: 401px) {
-.list-view .site-content .hentry:first-of-type, .list-view .site-content .hentry.has-post-thumbnail {
-    padding-top: 12px;
+  .list-view .site-content .hentry:first-of-type, .list-view .site-content .hentry.has-post-thumbnail {
+      padding-top: 12px;
+  }
+
 }
 
 
