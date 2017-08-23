@@ -95,6 +95,33 @@ Template: twentyfourteen
 }
 
 
+@media screen and (max-width: 640px) {
+  figure {
+    width: 100% !important;
+  }
+
+  blockquote.alignright, figure.wp-caption.alignright, img.alignright,
+  blockquote.alignleft, figure.wp-caption.alignleft, img.alignleft  {
+    margin: 7px 0 7px 0;
+  }
+
+  .wp-caption img[class*="wp-image-"] {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .wp-caption-text {
+    text-align: center;
+    border-top: 2px solid #eee;
+    margin-top: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: 1.5em;
+  }
+
+}
+
+
 @media screen and (min-width: 481px) {
 	a.post-thumbnail:hover img {
 		opacity: 0.85;
