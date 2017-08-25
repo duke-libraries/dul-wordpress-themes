@@ -73,12 +73,18 @@ endif;
 			$myTitle = esc_html( $item->get_title() );
       $myTitle = str_replace('&amp;','&',$myTitle);
 			$myShortTitle = myTruncate($myTitle, 50, " ");
+      $DVSdupe = false;
+
+      // DVS dupe check
+      if (strpos($myTitle, 'DVS Workshop:') !== false) {
+        $DVSdupe = true;
+      }
 
       $itemLink = $item->get_permalink();
       $itemDate = $item->get_date('Y/m/d H:i');
       $displayDate = new DateTime($itemDate);
 
-      if ( $displayDate > $nowDate && $dupTitleCheck != $myTitle && $dupLinkCheck != $itemLink ) {
+      if ( $displayDate > $nowDate && $dupTitleCheck != $myTitle && $dupLinkCheck != $itemLink && $DVSdupe == false ) {
 
         $eventCount++;
 

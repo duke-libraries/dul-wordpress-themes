@@ -94,13 +94,22 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
           $itemTitle = $item->get_title(true);
       		$displayTitle = str_replace('&amp;', '&', $itemTitle);
 
+          $DVSdupe = false;
+
+          // DVS dupe check
+          if (strpos($itemTitle, 'DVS Workshop:') !== false) {
+            $DVSdupe = true;
+          }
+
+          $itemLocation = $item->get_location();
+
           $itemDate = $item->get_date('Y/m/d H:i');
       		$displayDate = new DateTime($itemDate);
 
           $itemLink = $item->get_permalink();
 
           // check for duplicates
-          if ( $dupTitleCheck != $itemTitle && $dupLinkCheck != $itemLink ) {
+          if ( $dupTitleCheck != $itemTitle && $dupLinkCheck != $itemLink && $DVSdupe == false ) {
 
       	?>
 
@@ -120,6 +129,8 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
             } ?>
 
           </div>
+
+
           <?php echo $temp_description ?>
       		<p class="footnote"><em><?php if ($item->get_permalink()) echo '<a href="' . $item->get_permalink() . '">'; echo 'more information &raquo;'; if ($item->get_permalink()) echo '</a>'; //echo $item->get_date('F j, Y'); ?></em><br /></p>
 
