@@ -91,17 +91,20 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
       		$temp_description = preg_replace("/<span[^>]+\>/i", "", $temp_description);
           $temp_description = str_replace("<img class='event-image' alt='event image' src='' />","",$temp_description);
 
+          // add campus for ssri events
+          if ( strpos($temp_description, "<div class='event-location'>SSRI-Gross Hall 230E</div>") !== false ) {
+              $temp_description = str_replace("<div class='event-campus'></div>","<div class='event-campus'>West Campus</div>",$temp_description);
+          }
+
           $itemTitle = $item->get_title(true);
       		$displayTitle = str_replace('&amp;', '&', $itemTitle);
 
           $DVSdupe = false;
 
           // DVS dupe check
-          if (strpos($itemTitle, 'DVS Workshop:') !== false) {
+          if ( strpos($itemTitle, 'DVS Workshop:') !== false ) {
             $DVSdupe = true;
           }
-
-          $itemLocation = $item->get_location();
 
           $itemDate = $item->get_date('Y/m/d H:i');
       		$displayDate = new DateTime($itemDate);
