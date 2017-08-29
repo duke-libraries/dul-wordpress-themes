@@ -1,14 +1,15 @@
 <?php
 //require_once('/php/simplepie.inc');
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $feed_url = 'https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/43/dukedukeduke.xml';
 
-$test_feed = simplexml_load_string($feed_url);
-if($test_feed===FALSE) {
-	 echo "<p><em>There was a problem loading the feed.</em></p>";
-} else {
 
-	require_once(ABSPATH . '/php/autoloader.php');
+include_once('simplepie/autoloader.php');
+include_once('simplepie/idn/idna_convert.class.php');
 
 	// Set your own configuration options as you see fit.
 	$feed = new SimplePie();
@@ -22,7 +23,7 @@ if($test_feed===FALSE) {
 	$feed->set_timeout(60);
 
 	$feed->set_cache_duration(900);
-	//$feed->set_cache_duration(60);
+
 
 	$success = $feed->init();
 
@@ -40,13 +41,21 @@ if($test_feed===FALSE) {
 	echo '<div id="all-library-news">';
 
 
-		// If we have an error, display it.
-		if ($feed->error())
-		{
-			echo '<div class="sp_errors">' . "\r\n";
-			echo '<p>' . htmlspecialchars($feed->error()) . "</p>\r\n";
-			echo '</div>' . "\r\n";
-		};
+			// Check to see if there are more than zero errors (i.e. if there are any errors at all)
+			if ($feed->error())
+			{
+			  // If so, start a <div> element with a classname so we can style it.
+			  echo '<div class="sp_errors">' . "\r\n";
+
+			    // ... and display it.
+			    echo '<p>' . htmlspecialchars($feed->error()) . "</p>\r\n";
+
+			  // Close the <div> element we opened.
+			  echo '</div>' . "\r\n";
+			}
+
+
+
 
 		// Let's do our paging controls
 		$next = (int) $start + (int) $length;
@@ -74,7 +83,7 @@ if($test_feed===FALSE) {
 		$begin = (int) $start + 1;
 		$end = ($next > $max) ? $max : $next;
 
-		echo '<p class="pagination">Showing' . $begin . '&ndash;' . $end . 'out of' . $max .'&nbsp;' . $prevlink . '|' . $nextlink . '</p>';
+		echo '<p class="pagination"><em>Showing ' . $begin . '&ndash;' . $end . ' out of ' . $max .' &nbsp; ' . $prevlink . ' | ' . $nextlink . '</em></p>';
 
 		echo '<br />';
 
@@ -254,13 +263,26 @@ if($test_feed===FALSE) {
 					echo '<div class="content">';
 						echo '<p>';
 
-						if ($item->get_permalink())
+						if ($item->get_permalink()) {
 							echo '<a href="' . $item->get_permalink() . '">';
-							echo $item->get_title(true);
-						if ($item->get_permalink()) echo '</a>';
+						}
+
+						// sanitize title
+						$theTitle = $item->get_title(true);
+						$theTitle = ltrim($theTitle);
+						$theTitle = rtrim($theTitle);
+						$theTitle = str_replace('&amp;amp;','&amp;',$theTitle);
+
+
+
+						echo $theTitle;
+
+						if ($item->get_permalink()) {
+							echo '</a>';
+						}
 
 						echo '</p>';
-						echo '<p class="footnote"><a href="' . $theSourceURL . '">' . $theSource . '</a> &mdash; ' . $item->get_date('F j, Y'); . '</p>';
+						echo '<p class="footnote"><a href="' . $theSourceURL . '">' . $theSource . '</a> &mdash; ' . $item->get_date('F j, Y') . '</p>';
 
 					echo '</div>';
 
@@ -273,16 +295,8 @@ if($test_feed===FALSE) {
 
 
 
-		echo '<p class="pagination">Showing' . $begin . '&ndash;' . $end . ' out of ' . $max . '&nbsp;' $prevlink . ' | ' . $nextlink . '</p>';
+		echo '<p class="pagination"><em>Showing ' . $begin . '&ndash;' . $end . ' out of ' . $max . ' &nbsp; ' . $prevlink . ' | ' . $nextlink . '</em></p>';
 
-		<!-- | <a href="<?php //echo '?start=' . $start . '&length=5'; ?>">5</a>, <a href="<?php //echo '?start=' . $start . '&length=10'; ?>">10</a>, or <a href="<?php //echo '?start=' . $start . '&length=20'; ?>">20</a> at a time.-->
-
+		?>
 
 	</div>
-
-	<!-- test closing divs -->
-
-
-
-
-}
