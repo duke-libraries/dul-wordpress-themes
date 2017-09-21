@@ -53,7 +53,7 @@
 
 		</div>
 
-		<div class="exhibits-link"><p><a href="http://library.duke.edu/exhibits/index.html">View all exhibits &raquo;</a></p></div>
+		<div class="exhibits-link"><p><a href="https://library.duke.edu/exhibits/">View all exhibits &raquo;</a></p></div>
 
 
 	</div>

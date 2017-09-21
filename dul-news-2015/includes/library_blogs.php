@@ -86,11 +86,11 @@
 
 				<option value="https://blogs.library.duke.edu/dcthree/">Duke Collaboratory for Classics Computing</option>
 
-				<option value="http://archives.mc.duke.edu/blog">Duke Medical Center Archives Blog</option>
+				<option value="https://archives.mc.duke.edu/blog">Duke Medical Center Archives Blog</option>
 
-				<option value="http://sites.fuqua.duke.edu/fordlibrary/">Fuqua School Ford Library</option>
+				<option value="https://sites.fuqua.duke.edu/fordlibrary/">Fuqua School Ford Library</option>
 
-				<option value="http://dukelawref.blogspot.com/">The Goodson Blogson</option>
+				<option value="https://dukelawref.blogspot.com/">The Goodson Blogson</option>
 
 				<option value="https://blogs.library.duke.edu/answerperson/">Library Answer Person</option>
 
