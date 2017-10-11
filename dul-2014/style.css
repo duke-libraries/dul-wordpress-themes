@@ -261,7 +261,8 @@ a {
 }
 
 .entry-content p,
-.entry-content li {
+.entry-content li,
+.entry-content div {
 	font-family: Libre Baskerville, serif;
 }
 

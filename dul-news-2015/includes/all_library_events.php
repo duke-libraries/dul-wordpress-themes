@@ -3,7 +3,8 @@
 date_default_timezone_set('America/New_York');
 
 //include_once(ABSPATH . WPINC . '/feed.php');
-require_once(ABSPATH . '/php/autoloader.php');
+//require_once(ABSPATH . '/php/autoloader.php');
+require_once('simplepie/autoloader.php');
 
 // Get a SimplePie feed object from the specified feed source.
 
@@ -112,6 +113,11 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
           $itemLink = $item->get_permalink();
 
           // check for duplicates
+
+          if ( $dupTitleCheck == $itemTitle ) {
+            echo '<!-- duplicate: ' . $dupTitleCheck . '-->';
+          }
+
           if ( $dupTitleCheck != $itemTitle && $dupLinkCheck != $itemLink && $DVSdupe == false ) {
 
       	?>

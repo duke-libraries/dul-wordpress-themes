@@ -7,7 +7,7 @@
 date_default_timezone_set('America/New_York');
 
 //include_once(ABSPATH . WPINC . '/feed.php');
-require_once(ABSPATH . '/php/autoloader.php');
+require_once('simplepie/autoloader.php');
 
 // Get a SimplePie feed object from the specified feed source.
 
