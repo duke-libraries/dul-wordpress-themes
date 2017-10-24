@@ -8,6 +8,7 @@ require_once('simplepie/autoloader.php');
 
 // Get a SimplePie feed object from the specified feed source.
 
+
 // Pipes EOL'd
 //$rss = fetch_feed('https://pipes.yahoo.com/pipes/pipe.run?_id=a4b573af3dddcd18fc53354bb62123d7&_render=rss');
 $rss = fetch_feed('https://radiant-savannah-1223.herokuapp.com/users/1/web_requests/101/dukedukeduke.xml');
@@ -111,6 +112,10 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
       		$displayDate = new DateTime($itemDate);
 
           $itemLink = $item->get_permalink();
+
+          if ( substr($itemLink, -1) == '_' ) {
+            $itemLink = substr($itemLink, 0, -1);
+          };
 
           // check for duplicates
 

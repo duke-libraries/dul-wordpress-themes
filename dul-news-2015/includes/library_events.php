@@ -81,6 +81,11 @@ endif;
       }
 
       $itemLink = $item->get_permalink();
+
+      if ( substr($itemLink, -1) == '_' ) {
+        $itemLink = substr($itemLink, 0, -1);
+      };
+
       $itemDate = $item->get_date('Y/m/d H:i');
       $displayDate = new DateTime($itemDate);
 
