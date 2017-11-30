@@ -131,7 +131,7 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
       		<h3><?php if ($item->get_permalink()) echo '<a href="' . $itemLink . '">'; echo $displayTitle; if ($item->get_permalink()) echo '</a>'; ?></h3>
           <div class="displaydate">
 
-          <?php if ($DST > 0) {
+          <?php if ($DST == 0) {
 
                 echo $displayDate->format('l, F j, g:i A');
 

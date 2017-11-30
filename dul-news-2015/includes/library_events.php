@@ -101,7 +101,7 @@ endif;
 
             <?php
 
-                if ($DST > 0) {
+                if ($DST == 0) {
 
                     echo $displayDate->format('l, F j, g:i A');
 
