@@ -73,11 +73,26 @@ endif;
 			$myTitle = esc_html( $item->get_title() );
       $myTitle = str_replace('&amp;','&',$myTitle);
 			$myShortTitle = myTruncate($myTitle, 50, " ");
+
       $DVSdupe = false;
+      $TourDupe = false;
+      $EventDupe = false;
+      $LinkDupe = false;
 
       // DVS dupe check
-      if (strpos($myTitle, 'DVS Workshop:') !== false) {
+      if ( strpos($myTitle, 'DVS Workshop:') !== false ) {
         $DVSdupe = true;
+      }
+
+      // Normal Event dupe check
+      if ($dupTitleCheck == $itemTitle) {
+        $EventDupe = true;
+      }
+
+      // Tour dupe check
+      if (strpos($itemTitle, 'Library Tour') !== false) {
+        $TourDupe = true;
+        $EventDupe = false;
       }
 
       $itemLink = $item->get_permalink();
@@ -86,10 +101,19 @@ endif;
         $itemLink = substr($itemLink, 0, -1);
       };
 
+      // Link dupe check
+      if ($dupLinkCheck == $itemLink) {
+        $LinkDupe = true;
+      }
+
+
+
       $itemDate = $item->get_date('Y/m/d H:i');
       $displayDate = new DateTime($itemDate);
 
-      if ( $displayDate > $nowDate && $dupTitleCheck != $myTitle && $dupLinkCheck != $itemLink && $DVSdupe == false ) {
+      //if ( $displayDate > $nowDate && $dupTitleCheck != $myTitle && $dupLinkCheck != $itemLink && $DVSdupe == false ) {
+
+      if ( $displayDate > $nowDate && $EventDupe == false && $LinkDupe == false && $DVSdupe == false  ) {
 
         $eventCount++;
 
@@ -99,16 +123,18 @@ endif;
         <a href='<?php echo esc_url( $itemLink ); ?>' title='<?php echo $myTitle; ?>'><?php echo $myShortTitle; ?></a>
 		<span class="rssdate">
 
+            <?php echo $displayDate->format('l, F j, g:i A'); ?>
+
             <?php
 
                 if ($DST == 0) {
 
-                    echo $displayDate->format('l, F j, g:i A');
+                    //echo $displayDate->format('l, F j, g:i A');
 
                 } else {
 
-                    $displayDate->modify("+60 minutes");
-                    echo $displayDate->format('l, F j, g:i A');
+                    //$displayDate->modify("+60 minutes");
+                    //echo $displayDate->format('l, F j, g:i A');
 
                 }
 

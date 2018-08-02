@@ -1,3 +1,4 @@
+
 <?php // Get RSS Feed(s)
 
 date_default_timezone_set('America/New_York');
@@ -102,10 +103,25 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
       		$displayTitle = str_replace('&amp;', '&', $itemTitle);
 
           $DVSdupe = false;
+          $TourDupe = false;
+          $EventDupe = false;
+          $LinkDupe = false;
+
 
           // DVS dupe check
           if ( strpos($itemTitle, 'DVS Workshop:') !== false ) {
             $DVSdupe = true;
+          }
+
+          // Normal Event dupe check
+          if ($dupTitleCheck == $itemTitle) {
+            $EventDupe = true;
+          }
+
+          // Tour dupe check
+          if (strpos($itemTitle, 'Library Tour') !== false) {
+            $TourDupe = true;
+            $EventDupe = false;
           }
 
           $itemDate = $item->get_date('Y/m/d H:i');
@@ -117,13 +133,20 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
             $itemLink = substr($itemLink, 0, -1);
           };
 
-          // check for duplicates
-
-          if ( $dupTitleCheck == $itemTitle ) {
-            echo '<!-- duplicate: ' . $dupTitleCheck . '-->';
+          // Link dupe check
+          if ($dupLinkCheck == $itemLink) {
+            $LinkDupe = true;
           }
 
-          if ( $dupTitleCheck != $itemTitle && $dupLinkCheck != $itemLink && $DVSdupe == false ) {
+          // check for duplicates
+
+            if ( $dupTitleCheck == $itemTitle ) {
+              echo '<!-- duplicate: ' . $dupTitleCheck . '-->';
+            }
+
+          //if ( $dupTitleCheck != $itemTitle && $dupLinkCheck != $itemLink && $DVSdupe == false ) {
+
+          if ( $EventDupe == false && $LinkDupe == false && $DVSdupe == false ) {
 
       	?>
 
@@ -131,14 +154,16 @@ if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly
       		<h3><?php if ($item->get_permalink()) echo '<a href="' . $itemLink . '">'; echo $displayTitle; if ($item->get_permalink()) echo '</a>'; ?></h3>
           <div class="displaydate">
 
+            <?php echo $displayDate->format('l, F j, g:i A'); ?>
+
           <?php if ($DST == 0) {
 
-                echo $displayDate->format('l, F j, g:i A');
+                //echo $displayDate->format('l, F j, g:i A');
 
             } else {
 
-                $displayDate->modify("+60 minutes");
-                echo $displayDate->format('l, F j, g:i A');
+                //$displayDate->modify("+60 minutes");
+                //echo $displayDate->format('l, F j, g:i A');
 
             } ?>
 
